@@ -1,0 +1,135 @@
+[
+  {
+    "Station": "大安站",
+    "StationEn": "Daan",
+    "Destination": "動物園站",
+    "DestinationEn": "Taipei Zoo",
+    "UpdateTime": "20251105112059"
+  },
+  {
+    "Station": "中山站",
+    "StationEn": "Zhongshan",
+    "Destination": "松山站",
+    "DestinationEn": "Songshan",
+    "UpdateTime": "20251105112024"
+  },
+  {
+    "Station": "市政府站",
+    "StationEn": "Taipei City Hall",
+    "Destination": "南港展覽館站",
+    "DestinationEn": "Exhibition Center",
+    "UpdateTime": "20251105112048"
+  },
+  {
+    "Station": "辛亥站",
+    "StationEn": "Xinhai",
+    "Destination": "南港展覽館站",
+    "DestinationEn": "Exhibition Center",
+    "UpdateTime": "20251105112059"
+  },
+  {
+    "Station": "忠孝復興站",
+    "StationEn": "Zhongxiao Fuxing",
+    "Destination": "南港展覽館站",
+    "DestinationEn": "Exhibition Center",
+    "UpdateTime": "20251105112059"
+  },
+  {
+    "Station": "板橋站",
+    "StationEn": "Banqiao",
+    "Destination": "亞東醫院站",
+    "DestinationEn": "Far Eastern Hospital",
+    "UpdateTime": "20251105112038"
+  },
+  {
+    "Station": "芝山站",
+    "StationEn": "Zhishan",
+    "Destination": "象山站",
+    "DestinationEn": "Elephant Mountain",
+    "UpdateTime": "20251105112023"
+  },
+  {
+    "Station": "信義安和站",
+    "StationEn": "XINYI ANHE",
+    "Destination": "淡水站",
+    "DestinationEn": "Tamsui",
+    "UpdateTime": "20251105112023"
+  },
+  {
+    "Station": "信義安和站",
+    "StationEn": "XINYI ANHE",
+    "Destination": "象山站",
+    "DestinationEn": "Elephant Mountain",
+    "UpdateTime": "20251105112023"
+  },
+  {
+    "Station": "南京三民站",
+    "StationEn": "Nanjing Sanmin",
+    "Destination": "松山站",
+    "DestinationEn": "Songshan",
+    "UpdateTime": "20251105112044"
+  },
+  {
+    "Station": "南港軟體園區站",
+    "StationEn": "Nangang Software Park",
+    "Destination": "動物園站",
+    "DestinationEn": "Taipei Zoo",
+    "UpdateTime": "20251105112059"
+  },
+  {
+    "Station": "國父紀念館站",
+    "StationEn": "Sun Yat-Sen Memorial Hall",
+    "Destination": "頂埔站",
+    "DestinationEn": "Dingpu",
+    "UpdateTime": "20251105112048"
+  },
+  {
+    "Station": "景安站",
+    "StationEn": "Jingan",
+    "Destination": "蘆洲站",
+    "DestinationEn": "Luzhou",
+    "UpdateTime": "20251105112051"
+  },
+  {
+    "Station": "景美站",
+    "StationEn": "Jingmei",
+    "Destination": "新店站",
+    "DestinationEn": "Xindian",
+    "UpdateTime": "20251105112024"
+  },
+  {
+    "Station": "善導寺站",
+    "StationEn": "Shandao Temple",
+    "Destination": "南港展覽館站",
+    "DestinationEn": "Exhibition Center",
+    "UpdateTime": "20251105112048"
+  },
+  {
+    "Station": "新北產業園區站",
+    "StationEn": "New Taipei Industrial Park",
+    "Destination": "大坪林站",
+    "DestinationEn": "Dapinglin",
+    "UpdateTime": "20251105112106"
+  },
+  {
+    "Station": "葫洲站",
+    "StationEn": "Huzhou",
+    "Destination": "南港展覽館站",
+    "DestinationEn": "Exhibition Center",
+    "UpdateTime": "20251105112059"
+  },
+  {
+    "Station": "劍南路站",
+    "StationEn": "Jiannan Rd.",
+    "Destination": "動物園站",
+    "DestinationEn": "Taipei Zoo",
+    "UpdateTime": "20251105112059"
+  },
+  {
+    "Station": "劍潭站",
+    "StationEn": "Jiantan",
+    "Destination": "大安站",
+    "DestinationEn": "DAAN",
+    "UpdateTime": "20251105112043"
+  }
+]
