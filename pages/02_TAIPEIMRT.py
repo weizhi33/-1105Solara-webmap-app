@@ -3,7 +3,7 @@ import solara
 import leafmap.leafmap as leafmap 
 
 # 臺北捷運路線 GeoJSON 檔案的原始 URL
-MRT_ROUTES_URL = "https://github.com/leoluyi/taipei_mrt/blob/master/routes.geojson"
+MRT_ROUTES_URL = "https://github.com/leoluyi/taipei_mrt/blob/master/stations.geojson"
 
 # 將所有邏輯封裝在 Solara 組件內
 @solara.component
