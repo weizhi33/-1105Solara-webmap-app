@@ -1,4 +1,4 @@
-# 檔名: 03_3D台北建築圖.py
+# 檔名: 03_TAIPEI_BUILD.py (請確保你的檔名與 Solara 偵測到的檔名一致)
 import solara
 import leafmap.maplibregl as leafmap
 
@@ -12,31 +12,29 @@ def create_map():
     - 實作台北 3D 建築圖層。
     """
     
-    # 1. 使用 leafmap.Map 建立地圖 (它預設已是 MapLibre GL backend)
-    # style="positron" 直接使用 CartoDB Positron 免費底圖
+    # 使用 style="positron" 設置 CartoDB Positron 底圖，無需 Mapbox Token
     m = leafmap.Map(
-        center=TAIPEI_CENTER, # 將中心稍微調整到更靠近台北市中心
-        zoom=15.5, # 適當的縮放級別
-        pitch=60, # 傾斜角度，營造 3D 效果
-        bearing=-17, # 地圖旋轉角度
-        style="positron", # CartoDB Positron 底圖
+        center=TAIPEI_CENTER, 
+        zoom=15.5, 
+        pitch=60, 
+        bearing=-17, 
+        style="positron", 
         height="750px",
-        sidebar_visible=False, # 預設關閉側邊欄，讓地圖更純粹
+        sidebar_visible=False,
     )
     
-    # 2. 實作台北 3D 建築圖層
-    # leafmap.add_overture_3d_buildings 使用 Overture Maps 的全球建築資料
-    # 使用 'simple' 模板，這是一個預設樣式，通常不需要 Mapbox Token
+    # 實作台北 3D 建築圖層 (Overture Maps Data)
     m.add_overture_3d_buildings(
         template="simple",
-        name="Overture 3D Buildings" # 給圖層一個名稱
+        name="Overture 3D Buildings"
     )
     
-    # 加上一個圖層控制，方便查看圖層（選用）
+    # 加入圖層控制
     m.add_layer_control() 
     
     return m
 
+# ⭐⭐⭐ 關鍵修復處： Solara 必須找到這個名為 Page 的組件 ⭐⭐⭐
 @solara.component
 def Page():
     """
