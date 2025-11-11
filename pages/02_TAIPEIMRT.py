@@ -1,9 +1,16 @@
-# 02_2D台北捷運圖.py
-import streamlit as st
-import leafmap.leafmap as leafmap
+# 02_TAIPEIMRT.py (Solara 結構範例)
+import solara
+# Solara 不直接使用 Streamlit 的 st.title，而是用 solara.Markdown 等
 
-# 頁面標題
-st.title("02_TAIPEIMRT") 
+@solara.component
+def Page():
+    solara.Title("02_TAIPEIMRT")
+    # 在這裡呼叫 Leafmap，但 Leafmap 在 Solara 中可能需要特殊的封裝
+    # 例如使用 solara.WidgetFactory 或 solara.FigurePlotly
+
+    # 由於 Leafmap/ipyleaflet 核心是基於 Jupyter Widgets (IPyWidgets)
+    # 你可能需要使用 solara.display(m) 或 solara.FigureSolara 來顯示地圖
+    pass# 02_2D台北捷運圖.py
 
 # 臺北捷運路線 GeoJSON 檔案的原始 URL
 # 這是你從老師的 GitHub 倉庫中找到的路線檔案
