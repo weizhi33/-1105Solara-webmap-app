@@ -1,43 +1,39 @@
-# 檔案: pages/02_TAIPEIMRT.py (Solara 專用結構)
+# 檔案: pages/02_TAIPEIMRT.py (使用 MapLibreGL 後端)
+
 import solara
-import leafmap.leafmap as leafmap 
+import leafmap.maplibregl as leafmap  # <-- 關鍵修正 1: 使用 maplibregl 後端
 
-# 臺北捷運路線 GeoJSON 檔案的原始 URL
-MRT_ROUTES_URL = "https://github.com/leoluyi/taipei_mrt/blob/master/stations.geojson"
+# 臺北捷運路線 GeoJSON 檔案的原始 URL (使用你找到的正確連結)
+MRT_ROUTES_URL = "https://raw.githubusercontent.com/leoluyi/taipei_mrt/master/routes.geojson"
 
-# 將所有邏輯封裝在 Solara 組件內
+# 將地圖創建邏輯放在一個簡單的函數中
+def create_map():
+    # 設置你需要的中心點、縮放級別和樣式
+    # 這裡使用同學的設定值，以確保程式碼能運行
+    m = leafmap.Map(
+        center=(121.55555, 25.08722), 
+        zoom=16,
+        pitch=60,
+        bearing=-17,
+        style="positron", # 預設樣式
+        height="750px",
+        sidebar_visible=False,
+    )
+    
+    # 設置作業要求的暗色底圖 (CartoDB.DarkMatter)
+    m.add_basemap("CartoDB.DarkMatter")
+    
+    # 載入 GeoJSON 資料 (直接將 URL 作為第一個參數)
+    # 註：這裡使用 m.add_geojson(url, name=...)，而不是 m.add_geojson(in_geojson=...)
+    m.add_geojson(MRT_ROUTES_URL, name="臺北捷運")
+    
+    return m
+
+# Solara 組件
 @solara.component
 def Page():
-    # 設置頁面標題
-    solara.Title("02_2D 臺北捷運圖 (Solara)")
+    # 創建地圖物件
+    m = create_map()
     
-    # 使用 Solara 的 use_memo 確保地圖只創建一次，優化性能
-    # use_memo 接受一個函式作為參數
-    @solara.use_memo
-    def create_mrt_map():
-        # 1. 設定以臺北為中心、暗色底圖
-        taipei_lat, taipei_lon, zoom = 25.03, 121.56, 10
-        
-        # 建立地圖實例 (這是 ipyleaflet 物件)
-        m = leafmap.Map(
-            center=(taipei_lat, taipei_lon), 
-            zoom=zoom, 
-            tiles='CartoDB.DarkMatter', # 作業要求：暗色底圖
-        )
-        
-        # 2. 載入臺北捷運路網 (Vector)
-        m.add_geojson(
-            in_geojson=MRT_ROUTES_URL, 
-            layer_name="臺北捷運",
-            style={'color': '#00BFFF', 'weight': 3, 'opacity': 0.9}, 
-        )
-        return m
-        
-    mrt_map = create_mrt_map()
-    
-    # 顯示地圖：使用 Solara 的 ipywidgets 顯示器來顯示 Leafmap/ipyleaflet 物件
-    # 這裡使用 solara.FigureSolara 來確保地圖能正確渲染並佔據空間
-    solara.FigureSolara(mrt_map, height="600px")
-    
-# 如果你不需要複雜的佈局，只需在 Page() 之外調用它一次（在 Solara 中通常不是必需的）
-# Page()
+    # 顯示地圖：使用 Leafmap 專為 Solara 提供的顯示函式
+    return m.to_solara()  # <-- 關鍵修正 2: 使用 m.to_solara() 顯示地圖
